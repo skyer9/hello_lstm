@@ -9,6 +9,7 @@ import numpy as np
 X_train = "Hello, World!"
 # X_train = "안녕하세요, World!"
 
+nb_epoches = 25
 batch_size = 1
 
 
@@ -82,7 +83,7 @@ prediction = tf.argmax(outputs, axis=2)
 
 with tf.Session() as sess:
     sess.run(tf.global_variables_initializer())
-    for i in range(25):
+    for i in range(nb_epoches):
         l, _ = sess.run([loss, train], feed_dict={X: X_data_one_hot, Y: Y_data})
         result = sess.run(prediction, feed_dict={X: X_data_one_hot})
         print(i, "loss:", l, "prediction: ", result, "true Y: ", Y_data)
