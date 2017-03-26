@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import tensorflow as tf
 from tensorflow.contrib.rnn import BasicLSTMCell
 from tensorflow.contrib.layers import fully_connected
@@ -6,8 +7,8 @@ from tensorflow.contrib.seq2seq import sequence_loss
 import numpy as np
 
 X_train = "Hello, World!"
+# X_train = "안녕하세요, World!"
 
-hidden_size = 10
 batch_size = 1
 
 
@@ -40,6 +41,7 @@ def token_ids_to_one_hot(token_ids, num_classes=10):
 sequence_length = len(X_train) - 1
 
 X_train_vocab, X_train_vocab_rev = create_vocabulary(X_train)
+hidden_size = len(X_train_vocab)
 num_classes = len(X_train_vocab)
 
 X_train_ids = sentence_to_token_ids(X_train, X_train_vocab)
