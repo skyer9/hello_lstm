@@ -8,8 +8,12 @@ import numpy as np
 
 X_train = "Hello, World!"
 # X_train = "안녕하세요, World!"
+# X_train = ("if you want to build a ship, don't drum up people together to "
+#            "collect wood and don't assign them tasks and work, but rather "
+#            "teach them to long for the endless immensity of the sea.")
 
 nb_epoches = 25
+# nb_epoches = 100
 batch_size = 1
 
 
