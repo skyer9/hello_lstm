@@ -21,7 +21,7 @@ batch_size = 1
 def create_vocabulary(sequence):
     vocab = {}
     for i in range(len(sequence)):
-        ch = X_train[i]
+        ch = sequence[i]
         if ch in vocab:
             vocab[ch] += 1
         else:
